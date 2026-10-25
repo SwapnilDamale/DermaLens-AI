@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    background-color: theme("colors.paper");
+    color: theme("colors.ink");
+    font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  section[id] {
+    scroll-margin-top: 4.5rem;
+  }
+  :focus-visible {
+    outline: 2px solid theme("colors.rose.DEFAULT");
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+  ::selection {
+    background: theme("colors.rose.100");
+    color: theme("colors.plum.900");
+  }
+  summary::-webkit-details-marker {
+    display: none;
+  }
+}
+
+/* Design-system primitives. Components compose these rather than restyling. */
+@layer components {
+  .h-display {
+    @apply font-display font-light tracking-tight text-ink;
+    line-height: 1.04;
+    letter-spacing: -0.02em;
+  }
+  .h-section {
+    @apply font-display font-light text-ink;
+    font-size: clamp(2rem, 1.4rem + 2.4vw, 3.25rem);
+    line-height: 1.1;
+    letter-spacing: -0.015em;
+  }
+  .lede {
+    @apply text-lg leading-relaxed text-slate;
+    max-width: 60ch;
+  }
+  .card {
+    @apply rounded-xl border border-line bg-white;
+  }
+  .card-interactive {
+    @apply transition-[box-shadow,border-color] duration-300 hover:border-plum/30 hover:shadow-lift;
+  }
+  .chip {
+    @apply inline-flex items-center rounded-full border border-line bg-white px-3 py-1 text-xs font-medium text-slate;
+  }
+  .badge-demo {
+    @apply inline-flex items-center gap-1.5 rounded-full bg-rose-50 px-3 py-1 text-xs font-medium text-rose-700;
+  }
+}
+
+/* One orchestrated entrance, used on the hero only. */
+.hero-rise {
+  animation: rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: var(--delay, 0s);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    animation-delay: 0s !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
