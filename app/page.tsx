@@ -8,6 +8,7 @@ import { Progress } from "@/components/sections/Progress";
 import { Routine } from "@/components/sections/Routine";
 import { SkinInsights } from "@/components/sections/SkinInsights";
 import { SkinStation } from "@/components/sections/SkinStation";
+import { Team } from "@/components/sections/Team";
 import { Trust } from "@/components/sections/Trust";
 
 export default function HomePage() {
@@ -22,6 +23,7 @@ export default function HomePage() {
       <Explainable />
       <SkinStation />
       <Progress />
+      <Team />
       <Faq />
       <FinalCta />
     </>

@@ -12,6 +12,7 @@ export const NAV_LINKS = [
   { label: "Products", href: "/products" },
   { label: "Recommendations", href: "/recommendations" },
   { label: "Dashboard", href: "/dashboard" },
+  { label: "About", href: "/about" },
   { label: "For Retailers", href: "/retailers" },
 ] as const;
 
@@ -32,6 +33,7 @@ export const FOOTER_LINKS = {
     { label: "Contact", href: "/contact" },
   ],
   trust: [
+    { label: "About the team", href: "/about" },
     { label: "Safety and non-diagnostic notice", href: "/safety" },
     { label: "Privacy", href: "/privacy" },
     { label: "FAQs", href: "/#faq" },
